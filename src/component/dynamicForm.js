@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import RenderTextField from './fileds/renderTextField'
 import DynamicFormFooter from './dynamicFormFooter';
+import DynamicFormItem from './dynamicFormItem';
 
 
 
@@ -19,16 +19,9 @@ class DynamicForm extends Component {
     return (
       <React.Fragment>
         <form>
-          {controls.map((data) => {
-            switch (data.type) {
-              case 'text':
-                return <RenderTextField key={data.id} {...data} onChange={this.onValueChanged.bind(this)} />;
-              default:
-                return '';
-            }
-          })}
-
-
+          {controls.map((data) => (
+            <DynamicFormItem key={data.id} {...data} onChange={this.onValueChanged} />
+          ))}
           <DynamicFormFooter {...buttons} />
         </form>
       </React.Fragment>
