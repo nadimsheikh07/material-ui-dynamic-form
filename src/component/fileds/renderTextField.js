@@ -4,13 +4,8 @@ import TextField from '@material-ui/core/TextField';
 
 class RenderTextField extends React.Component {
 
-        
-    handleChange = (event) => {
-        this.props.onChange(event.target.value)
-    }
-
     render() {
-        const { id, error, label, defaultValue, helperText, variant } = this.props
+        const { id, error, label, defaultValue, helperText, variant, onChange } = this.props
         return (
             <React.Fragment>
                 <div>
@@ -21,7 +16,7 @@ class RenderTextField extends React.Component {
                         defaultValue={defaultValue}
                         helperText={error ? helperText : ''}
                         variant={variant}
-                        onChange={this.handleChange}
+                        onChange={onChange}
                     />
                 </div>
             </React.Fragment>

@@ -18,7 +18,32 @@ export const formData = {
             defaultValue: '',
             isRequired: true
         },
+        {
+            id: 'last-name2',
+            name: 'last_name',
+            label: 'Last Name',
+            type: 'text',
+            helperText: 'Please provide last name',
+            defaultValue: '',
+            isRequired: true
+        }, {
+            id: 'last-name3',
+            name: 'last_name',
+            label: 'Last Name',
+            type: 'text',
+            helperText: 'Please provide last name',
+            defaultValue: '',
+            isRequired: true
+        },
     ],
+    layout: {
+        spacing: 6,
+        xs: 12,
+        sm: 12,        
+        md: 6,
+        lg: 4,
+        xl: 4,
+    },
     buttons: {
         save: true,
         clear: true,
