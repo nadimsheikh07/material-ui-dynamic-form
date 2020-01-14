@@ -11,20 +11,24 @@ class DynamicForm extends Component {
   }
 
   onValueChanged = (event) => {
-    console.log('onValueChanged', event.target.value)
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  onSubmit = (event) => {
+    event.preventDefault();
+    this.props.onSubmit(this.state);
   }
 
   render() {
     const { controls, buttons, layout } = this.props.formData
-    console.log(layout)
 
     return (
       <React.Fragment>
-        <form>
+        <form onSubmit={this.onSubmit}>
           <Grid container spacing={layout.spacing}>
 
             {controls.map((data) => (
-              <Grid item  xs={layout.xs} sm={layout.sm} md={layout.md} lg={layout.lg} xl={layout.xl} key={data.id}>
+              <Grid item xs={layout.xs} sm={layout.sm} md={layout.md} lg={layout.lg} xl={layout.xl} key={data.id}>
                 <DynamicFormItem  {...data} onChange={this.onValueChanged} />
               </Grid>
             ))}

@@ -11,7 +11,7 @@ class DynamicFormItem extends Component {
 
         switch (type) {
             case 'number':
-                return '';
+                return <RenderTextField {...this.props} onChange={onChange} type="number" />;
             case 'password':
                 return '';
             case 'checkbox':

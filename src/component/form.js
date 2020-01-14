@@ -22,7 +22,7 @@ export const formData = {
             id: 'last-name2',
             name: 'last_name',
             label: 'Last Name',
-            type: 'text',
+            type: 'number',
             helperText: 'Please provide last name',
             defaultValue: '',
             isRequired: true
@@ -41,12 +41,12 @@ export const formData = {
         xs: 12,
         sm: 12,        
         md: 6,
-        lg: 4,
+        lg: 12,
         xl: 4,
     },
     buttons: {
         save: true,
         clear: true,
-        cancel: true,
+        cancel: false,
     }
 }
