@@ -1,18 +1,13 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 
-const inputNumberProps = {
-    step: 300,
-};
-
 class RenderTextField extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
-        console.log(this.props)
     }
 
     render() {
-        const { id, error, name, label, type, defaultValue, helperText, variant, onChange } = this.props
+        const { id, error, name, label, type, multiline, defaultValue, isRequired, helperText, variant, onChange, inputProps } = this.props
         return (
             <React.Fragment>
                 <div>
@@ -26,8 +21,10 @@ class RenderTextField extends React.Component {
                         variant={variant}
                         onChange={onChange}
                         type={type}
-                        inputProps={inputNumberProps}
+                        inputProps={inputProps}
+                        required={isRequired}
                         fullWidth={true}
+                        multiline={multiline}
                     />
                 </div>
             </React.Fragment>

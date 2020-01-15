@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RenderTextField from './fileds/renderTextField'
+import RenderPasswordField from './fileds/renderPasswordField'
 
 class DynamicFormItem extends Component {
     constructor(props) {
@@ -12,8 +13,10 @@ class DynamicFormItem extends Component {
         switch (type) {
             case 'number':
                 return <RenderTextField {...this.props} onChange={onChange} type="number" />;
+            case 'multiline':
+                return <RenderTextField {...this.props} onChange={onChange} multiline />;
             case 'password':
-                return '';
+                return <RenderPasswordField {...this.props} onChange={onChange} />;
             case 'checkbox':
                 return '';
             case 'textarea':

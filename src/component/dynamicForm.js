@@ -3,14 +3,18 @@ import DynamicFormFooter from './dynamicFormFooter';
 import DynamicFormItem from './dynamicFormItem';
 import Grid from '@material-ui/core/Grid';
 
+const initialState = {
 
+};
 
 class DynamicForm extends Component {
   constructor(props) {
     super(props)
+    this.state = initialState;
   }
 
   onValueChanged = (event) => {
+    console.log(event.target)
     this.setState({ [event.target.name]: event.target.value });
   }
 
@@ -19,9 +23,15 @@ class DynamicForm extends Component {
     this.props.onSubmit(this.state);
   }
 
+  onCancel = (event) => {
+    event.preventDefault();
+    if (this.props.onCancel) {
+      this.props.onCancel();
+    }
+  }
+
   render() {
     const { controls, buttons, layout } = this.props.formData
-
     return (
       <React.Fragment>
         <form onSubmit={this.onSubmit}>
@@ -34,7 +44,7 @@ class DynamicForm extends Component {
             ))}
 
           </Grid>
-          <DynamicFormFooter {...buttons} />
+          <DynamicFormFooter {...buttons} onCancel={this.onCancel} />
         </form>
       </React.Fragment>
     );

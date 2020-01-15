@@ -19,19 +19,29 @@ export const formData = {
             isRequired: true
         },
         {
-            id: 'last-name2',
-            name: 'last_name',
-            label: 'Last Name',
+            id: 'phone',
+            name: 'phone',
+            label: 'Phone',
             type: 'number',
-            helperText: 'Please provide last name',
+            helperText: 'Please provide phone number',
             defaultValue: '',
             isRequired: true
-        }, {
-            id: 'last-name3',
-            name: 'last_name',
-            label: 'Last Name',
-            type: 'text',
-            helperText: 'Please provide last name',
+        },
+        {
+            id: 'password',
+            name: 'password',
+            label: 'Password',
+            type: 'password',
+            helperText: 'Please provide password',
+            defaultValue: '',
+            isRequired: true
+        },
+        {
+            id: 'address',
+            name: 'address',
+            label: 'address',
+            type: 'multiline',
+            helperText: 'Please provide address',
             defaultValue: '',
             isRequired: true
         },
@@ -39,14 +49,12 @@ export const formData = {
     layout: {
         spacing: 6,
         xs: 12,
-        sm: 12,        
+        sm: 12,
         md: 6,
-        lg: 12,
+        lg: 6,
         xl: 4,
     },
-    buttons: {
-        save: true,
-        clear: true,
-        cancel: false,
+    buttons: {        
+        cancel: true,
     }
 }

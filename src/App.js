@@ -11,6 +11,9 @@ class App extends Component {
   onSubmit = (event) => {
     console.log(event)
   }
+  onCancel = () => {
+    console.log('onCancel')
+  }
 
   render() {
     return (
@@ -19,7 +22,10 @@ class App extends Component {
         <br />
         <CssBaseline />
         <Container>
-          <DynamicForm formData={formData} onSubmit={this.onSubmit} />
+          <DynamicForm formData={formData}
+            onSubmit={this.onSubmit}
+            onCancel={this.onCancel}
+          />
         </Container>
       </React.Fragment>
     );
